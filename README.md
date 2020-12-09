@@ -1,2 +1,3 @@
 # uniapp-APP-m3u8
-H5+，uniapp，video，m3u8，下载，播放，目前可以实现，dome后续放出
+uniapp APP端,H5+,下载m3u8,断点续传,以及播放
+用法及参数请看dome
