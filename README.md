@@ -16,22 +16,13 @@ var option = {
   initcallback(res) {
       //m3u8解析的回调，解析成功返回片段列表并开始下载，解析失败message
       console.log(res)
-      that.showload = true
-      that.complete = 0
-      that.count = res.obj.tslist.length
-      that.percentage = 0
-                        
   },
   tsloadcallback(res) {
       //片段下载回调，成功返回片段信息，失败返回respose，
       console.log(res)
-      that.complete++
-      that.percentage = Math.floor((that.complete/that.count)*100)
   },
   finishcallback(res) {
-      //文件保存为 app缓存 / 保存目录 / 下载标识.m3u8
-      that.videourl = res.obj.path
-      that.showload = false
+      //下载完成回调，返回下载失败的ts数组，以及下载好的文件所在位置
   }
 }
 downm3u8(option);
