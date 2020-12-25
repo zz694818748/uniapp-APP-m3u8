@@ -1,7 +1,16 @@
 # uniapp-APP-m3u8
-#### uniapp APP端,H5+,下载m3u8,断点续传,以及播放
+#### uniapp APP端,H5+,下载m3u8,断点续传,以及播放；安卓可用
 #### 用法及参数请看dome，
-#### 下载后先重新获取manifest.json的appid
+## 原理
+
+1.获取网络m3u8，然后生成一个本地m3u8文件
+
+2.下载的ts文件保存在本地，本地m3u8的EXTINF 直接指向下载的ts文件绝对路径
+
+3.video的src指向本地m3u8路径
+
+#### 注意：IOS没有测试，有反馈说m3u8必须要网址推流才可以播放，没设备无法实践；有需要可以考虑m3u8转mp4；（如果得空后续研究看看有没有办法转格式）
+
 ## 示例
 ```
 import downm3u8 from '@/utils/downm3u8.js'//引入插件包，注意路劲
